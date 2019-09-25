@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />-->
+		<title>Allegro</title>
+		<link href="../pict/Yamaha_Clarinet_YCL-457II-22_(rotated).jpg" rel="icon" type="image/x-icon" />
+		<!--<script src="//www.verovio.org/javascript/develop/verovio-toolkit.js" type="text/javascript"></script>-->
+		<!-- Latest compiled and minified CSS -->
+		<!--<link rel="stylesheet" href="../css/bootstrap.css" />-->
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+		<link href="../css/m_CC.css" rel="stylesheet" />
+	</head>
+	<body style="background-color: #1a0d00;">
+		<nav class="navbar navbar-inverse">
+			<!--style="margin-bottom: 1em;"-->
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse" id="myNavbar">
+					<ul class="nav navbar-nav">
+						<li class="active">
+							<a href="../index.html">Home</a>
+						</li>
+						<li>
+							<a href="about.html" target="_blank">Links and references</a>
+						</li>
+						<li>
+							<a href="../pdf/UserManual.pdf" target="_blank">User Manual</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="../pdf/nma_139_3_43_Bassetklarinette.pdf" target="_blank">NMA: Reconstructed version</a>
+						</li>
+						<li>
+							<a href="../pdf/nma_139_83_123_Sopranklarinette.pdf" target="_blank">NMA: Traditional version</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a href="javascript:void(0);" onclick="switchToScore();">Score</a>
+						</li>
+						<li class="active">
+							<a href="javascript:void(0);" onclick="switchToParts();">Clarinet part(s)</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="btn-group" style="float: right;">
+			<button class="btn btn-default" id="btn_soprano" type="button">Soprano</button>
+			<button class="btn btn-default" id="btn_basset" type="button">Basset</button>
+			<button class="btn btn-default active" id="btn_compare" type="button">Compare</button>
+		</div>
+		<div id="choice_overlay"></div>
+		<div id="svg_output">
+			<!--        <div class="loader"></div>-->
+		</div>
+		<footer class="container-fluid text-center">
+			<!--class="container-fluid text-center" style="background-color: #555; bottom:0; position:fixed; width:100%; height: 15%;"-->
+			<!--	style="background-color:#daeaf0; position:fixed; bottom:0;   left: 0;
+			bottom: 0;
+			width: 100%; padding:1rem;"-->
+			<!--		<nav class="navbar navbar-default">-->
+			<!--<div class="container-fluid">-->
+			<div class="btn-group navbar-left" style="text-align:left; background-color:#f6f6f6; color:black; padding:0.5rem;">
+				<p>
+					<span style="padding:0.5rem;">Search page with a specified measure number:</span>
+					<br />
+				</p>
+				<!--style="margin:auto; background-color: #555;"-->
+				<form>
+					<input id="measureNumber" type="text" />
+					<button id="GO_measure" type="submit">SEARCH</button>
+				</form>
+			</div>
+			<div class="btn-group navbar-left" id="div_sections" style="text-align:left; background-color:#f6f6f6; color:black; padding:0.5rem; display:none;">
+				<p>
+					<span style="padding:0.5rem;">Select page with a specified section:</span>
+					<br />
+				</p>
+				<select id="sections">
+					<option value="m1_d1e425">Tutti (m. 1)</option>
+					<option value="m57_d1e62649">SOLO (m. 57)</option>
+					<option value="m154_d1e121582">TUTTI (m. 154)</option>
+					<option value="m172_d1e144297">SOLO (m. 172)</option>
+					<option value="m227_d1e174544">TUTTI (m. 227)</option>
+					<option value="m248_d1e202984">SOLO (m. 248)</option>
+					<option value="m343_d1e265194">TUTTI (m. 343)</option>
+				</select>
+				<button id="GO" onclick="findSection()">GO-TO</button>
+			</div>
+			<div class="btn-group navbar-right" style="background-color:#f6f6f6; padding-top:1rem; ">
+				<span class="page-nav-elem glyphicon glyphicon-step-backward gi-2x" id="btn_first_page">
+					<label content="first page"></label>
+				</span>
+				<span class="page-nav-elem glyphicon glyphicon glyphicon-circle-arrow-left gi-2x" id="btn_prev_page"></span>
+				<span class="page-nav-elem glyphicon glyphicon-circle-arrow-right gi-2x" id="btn_next_page"></span>
+				<span class="page-nav-elem glyphicon glyphicon-step-forward gi-2x" id="btn_last_page"></span>
+				<span class="page-nav-elem glyphicon glyphicon-zoom-in gi-2x" id="btn_page_zoomin" style="margin-left: 0.5em;"></span>
+				<span class="page-nav-elem glyphicon glyphicon-zoom-out gi-2x" id="btn_page_zoomout"></span>
+			</div>
+		</footer>
+		<div class="modal"><!-- Place at bottom of page --></div>
+		<script src="../javascript/verovio-toolkit.js" type="text/javascript">/**/</script>
+		<script src="../javascript/basic-events.js" type="text/javascript">/**/</script>
+		<script src="../javascript/bootstrap.min.js" type="text/javascript">/**/</script>
+		<script src="../javascript/jquery-3.3.1.min.js" type="text/javascript">/**/</script>
+		<script src="../javascript/rendering.js" type="text/javascript">/**/</script>
+		<script src="../javascript/Saxonce/Saxonce.nocache.js" type="text/javascript">/**/</script>
+	</body>
+</html>

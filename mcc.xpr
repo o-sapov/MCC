@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="20.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="mcc.xpr" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="mcc.xpr">
+        <folder path="../learn-git/"/>
+        <folder path="."/>
+        <folder path="file:/L:/Programmieren/cmd/"/>
+    </projectTree>
+</project>
