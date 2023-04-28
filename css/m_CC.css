@@ -18,13 +18,17 @@
 }
 
 /* Set black background color, white text and some padding */
-footer {
+footer  {
 	background-color: #555;
 	color: white;
 	padding: 15px;
 	bottom: 0;
 	position: fixed;
 	width: 100%;
+}
+
+#footer a:link {
+	color: white;
 }
 
 
