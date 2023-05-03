@@ -1,0 +1,35 @@
+{
+  "devDependencies": {
+    "browser-sync": "^2.29.1",
+    "gulp": "^4.0.2",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-watch": "^5.0.1",
+    "sass": "^1.62.1"
+  },
+  "name": "mozart_clarinet_concerto",
+  "description": "Encoding and rendering of the first movement  of the Clarinet Concerto in A major K. 622 by W. A. Mozart.",
+  "version": "2.0.0",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/o-sapov/MCC.git"
+  },
+  "keywords": [
+    "MEI",
+    "W. A. Mozart",
+    "clarinet"
+  ],
+  "author": "Oleksii Sapov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/o-sapov/MCC/issues"
+  },
+  "homepage": "https://github.com/o-sapov/MCC#readme"
+}
