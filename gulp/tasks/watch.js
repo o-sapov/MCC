@@ -1,7 +1,8 @@
 var gulp = require('gulp'),
-    watch = require('gulp-watch'),
-  browserSync = require('browser-sync').create();
-  
+watch = require('gulp-watch'),
+browserSync = require('browser-sync').create();
+
+const scss = './app/assets/styles';
 
 
   gulp.task('watch', function() {
@@ -20,9 +21,15 @@ var gulp = require('gulp'),
       watch('./docs/html/**/*.html', function() {
         browserSync.reload();
       });
+
+        watch(scss, gulp.series('manageCSS'));
     });
 
-
+    gulp.task('cssInject', function() {
+        return gulp.src('./app/temp/styles/styles.css').pipe(browserSync.stream());
+      });
+      
+      gulp.task('manageCSS', gulp.series('styles', 'cssInject'));
 
 
 
@@ -35,15 +42,6 @@ var gulp = require('gulp'),
 // const localJS = localDist.concat('/assets/js');
 // const serverJS = serverDist.concat('\\assets\\js');
 
-// const scss = './app/assets/styles';
-// const localCss = localDist.concat('/css');
-// const serverCss = serverDist.concat('\\css');
-
-
-// gulp.task('sync', function (done) {
-//     fileSync(localDist, 'W:\\test\\dist',{ignore: ['.git', '.gitattributes', '.gitignore', '.Rhistory']});
-//     done();
-// });
 
 // gulp.task('watch', function () {
 //     watch(localJS, { ignoreInitial: true }, gulp.series('syncJS'));
@@ -57,19 +55,7 @@ var gulp = require('gulp'),
 //     );
 // });
 
-// gulp.task('syncCss', function () {
-//     fileSync(localCss, serverCss
-//     );
-// });
 
-// // compile scss to css and create maps
-// gulp.task('sass', function () {
-//     return gulp.src('./app/assets/styles/main.scss')
-//         .pipe(sourcemaps.init())
-//         .pipe(sass().on('error', sass.logError))
-//         .pipe(sourcemaps.write('.'))
-//         .pipe(gulp.dest('./dist/css'));
-// });
 
 // // compile scss to css, compress and rename to *.min
 // gulp.task('cssmin', function () {

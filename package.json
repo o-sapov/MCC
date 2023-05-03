@@ -31,5 +31,8 @@
   "bugs": {
     "url": "https://github.com/o-sapov/MCC/issues"
   },
-  "homepage": "https://github.com/o-sapov/MCC#readme"
+  "homepage": "https://github.com/o-sapov/MCC#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3"
+  }
 }
