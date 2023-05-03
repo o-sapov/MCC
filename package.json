@@ -1,12 +1,18 @@
 {
   "devDependencies": {
+    "@babel/preset-env": "^7.21.5",
+    "babel-loader": "^9.1.2",
     "browser-sync": "^2.29.1",
     "gulp": "^4.0.2",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
     "gulp-watch": "^5.0.1",
-    "sass": "^1.62.1"
+    "npm-run-all": "^4.1.5",
+    "onchange": "^7.1.0",
+    "sass": "^1.62.1",
+    "webpack": "^5.81.0",
+    "webpack-cli": "^5.0.2"
   },
   "name": "mozart_clarinet_concerto",
   "description": "Encoding and rendering of the first movement  of the Clarinet Concerto in A major K. 622 by W. A. Mozart.",
@@ -16,7 +22,9 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:js": "webpack --mode=production",
+    "build:js-modules": "webpack --mode=production",
+    "watch:js": "onchange \"./app/assets/scripts/*.js\" -- webpack --mode=development"
   },
   "repository": {
     "type": "git",
