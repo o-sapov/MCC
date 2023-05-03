@@ -2,6 +2,7 @@ var gulp = require('gulp');
 const sass = require('gulp-sass')(require('sass'));
 const sourcemaps = require('gulp-sourcemaps'), rename = require('gulp-rename');
 
+const stylesDest = './docs/assets/styles';
 
 // compile scss to css and create maps
 gulp.task('sass', function () {
@@ -9,7 +10,7 @@ gulp.task('sass', function () {
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(sourcemaps.write('.'))
-        .pipe(gulp.dest('./docs/assets/styles'));
+        .pipe(gulp.dest(stylesDest));
 });
 
 
@@ -24,5 +25,5 @@ gulp.task('cssmin', function () {
                 extname: ".css"
             };
         }))
-        .pipe(gulp.dest('./dist/css'));
+        .pipe(gulp.dest(stylesDest));
 });
