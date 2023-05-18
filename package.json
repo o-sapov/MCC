@@ -22,9 +22,7 @@
     "doc": "docs"
   },
   "scripts": {
-    "build:js": "webpack --mode=production",
-    "build:js-modules": "webpack --mode=production",
-    "watch:js": "onchange \"./app/assets/scripts/*.js\" -- webpack --mode=development"
+    "build:js": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -42,6 +40,7 @@
   },
   "homepage": "https://github.com/o-sapov/MCC#readme",
   "dependencies": {
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.7.0"
   }
 }

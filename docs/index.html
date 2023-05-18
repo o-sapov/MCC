@@ -1,48 +1,140 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<title>Index</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<link rel="icon" type="image/x-icon" href="pict/Yamaha_Clarinet_YCL-457II-22_(rotated).jpg" />
-		<!-- <link rel="stylesheet" href="//www.verovio.org/css/bootstrap/css/bootstrap.min.css" type="text/css" />
+  <head>
+    <title>Clarinet Concerto by W. A. Mozart</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="icon" type="image/x-icon" href="pict/Yamaha_Clarinet_YCL-457II-22_(rotated).jpg" />
+    <!-- <link rel="stylesheet" href="//www.verovio.org/css/bootstrap/css/bootstrap.min.css" type="text/css" />
     <link rel="stylesheet" href="//www.verovio.org/css/bootstrap/css/bootstrap-theme.min.css" type="text/css" />
-    <link rel="stylesheet" href="//www.verovio.org/css/verovio.css" />-->
-		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" /> -->
-		<link rel="stylesheet" href="./assets/styles/main.min.css" />
-	</head>
-	<body>
-		<nav class="navbar navbar-inverse">
-			<div class="container-fluid">
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="index.html">HOME</a></li>
-						<li><a href="html/allegro.html" target="_blank">Allegro</a></li>
-						<li><a href="html/about.html" target="_blank">Links and references</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<div class="container-fluid text-center">
-			<div class="row content">
-				<div class="col-sm-2 "> </div>
-				<div class="col-sm-8 text-left" style="padding:3rem;">
-					<h3>Comparing traditional and reconstructed versions of the <em>Clarinet Concerto</em> K. 622 by Wolfgang Amadé Mozart </h3>
-					<p style="text-align:justify; margin-top:2rem;">The Clarinet Concerto K. 622 belongs to the golden repertoire of this instrument and "represents a triumphant manifestation of the widespread eighteenth-century desire to appeal both to amateurs of music and to connoisseurs." [Lawson, 1996, p. IX] The creation of the masterpiece was decisively influenced by the friendship of Mozart with Anton Stadler who was a great clarinet virtuoso of his time. Stadler owned a special sort of an instrument, nowadays called <em>basset clarinet</em> which lower register was extended by a major third down to c (in the relation to the soprano clarinet). Mozart composed the concerto for this instrument. In 1801, an unknown editor published an arrangement for <em>soprano clarinet in A</em>. Since then, the concerto was predominantly played in this version, which is considered to be <em>traditional</em>, although it is certainly not the original. The <em>Neue Mozart Ausgabe</em> in the edition by Franz Giegling provides two versions of the orchestra score of the concerto which differ in their clarinet parts: </p>
-					<ul>
-						<li>I. Reconstructed version for basset clarinet</li>
-						<li>II. Traditional version for soprano clarinet in A</li>
-					</ul>
-					<p style="text-align:justify">The current project provides both versions of the first movement <b><i>Allegro</i></b>, which are can be displayed in an interactive way. The most essential part is the comparison of the <i>traditional</i> and <i>reconstructed </i>versions of the clarinet part. In addition, suggestions for the ornamentation of cadenzas as well as alternative readings are implemented for an interactive use. The sheet music is encoded in <a href="http://music-encoding.org">MEI</a> format and rendered by <a href="http://www.verovio.org/index.xhtml">Verovio</a>.</p>
-				</div>
-				<div class="col-sm-2 "> </div>
-			</div>
-		</div>
-		<footer id="footer" class="container-fluid text-center">
-			<!--background-color:#eee;-->
-			<p>Contact: <a href="mailto:sapov@gmx.at">sapov@gmx.at</a>
-			</p>
-		</footer>
-		<script type="text/javascript" src=".\assets\scripts\bundle.js">/**/</script>
-		<script type="text/javascript" src="../javascript/jquery-3.3.1.min.js">/**/</script>
-	</body>
+    <link rel="stylesheet" href="//www.verovio.org/css/verovio.css" /> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li id="project_info" class="active"><a href="#">Home</a></li>
+            <li id="allegro"><a href="#">I. Allegro</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right music">
+            <li>
+              <a href="javascript:void(0);" onclick="switchToScore();">Score</a>
+            </li>
+            <li class="active">
+              <a href="javascript:void(0);" onclick="switchToParts();">Clarinet part(s)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="btn-group music" style="float: right;">
+      <button class="btn btn-default" id="btn_soprano" type="button">Soprano</button>
+      <button class="btn btn-default" id="btn_basset" type="button">Basset</button>
+      <button class="btn btn-default active" id="btn_compare" type="button">Compare</button>
+    </div>
+    <div id="choice_overlay"></div>
+    <div class="music" id="svg_output">
+      <!--        <div class="loader"></div>-->
+    </div>
+    <div class="container-fluid text-center description">
+      <h1 class="main_title"><em>Clarinet Concerto</em>, K. 622 by Wolfgang Amadé Mozart</h1>
+      <h2 class="main_title">Comparison of the traditional and reconstructed versions</h2>
+
+      <div class="row content">
+
+        <div class="col-sm-2 "> </div>
+
+        <div class="col-sm-8 text-left" style="padding:3rem;">
+          <h2>Introduction</h2>
+          <p>The Clarinet Concerto K. 622 "represents a triumphant manifestation of the widespread eighteenth-century desire to appeal both to amateurs of music and to connoisseurs."<sup>1</sup> The creation of the masterpiece was decisively influenced by the friendship of W. A. Mozart with Anton Stadler who was a great clarinet virtuoso of his time. Stadler owned a special sort of an instrument, nowadays called <em>basset clarinet</em> which lower register was extended by a major third down to c (in the relation to the soprano clarinet). Mozart composed the concerto for this instrument. In 1801, an unknown editor published an arrangement for <em>soprano clarinet in A</em>. Since then, the concerto was predominantly played in this version, which is considered to be <em>traditional</em>, although it is certainly not the original. Thus, the <em><a href="https://dme.mozarteum.at/nmaonline/" target="_blank">Neue Mozart Ausgabe</a></em> in the edition by Franz Giegling<sup>2</sup> provides two versions of the orchestra score of the concerto which differ in their clarinet parts only: </p>
+          <ul>
+            <li>I. Reconstructed version for basset clarinet</li>
+            <li>II. Traditional version for soprano clarinet in A</li>
+          </ul>
+          <br />
+          <h2>Project description</h2>
+          <p>The current project provides both versions of the first movement <i>Allegro</i>, which are dynamicaly displayed on demand. The essential part is the comparison of the <i>traditional</i> and <i>reconstructed </i>versions of the clarinet part. In addition, suggestions for the ornamentation of cadenzas as well as alternative readings are provided for an interactive use. The score is encoded in <a href="http://music-encoding.org" target="_blank">MEI</a> format and rendered by <a href="http://www.verovio.org/index.xhtml" target="_blank">Verovio</a>.</p>
+          <br />
+          <h2>Links</h2>
+          <p>For further information cf. the corresponding publication (in German):<br />Oleksii Sapov, „Refactoring KV 622: ein Fassungsvergleich von Mozarts Klarinettenkonzert mit digitalen Methoden“, in: Rohrblatt 34 (2019) Heft 1, S. 12-14.</p>
+          <p>For more works by W. A. Mozart published in MEI-format cf. the <a href="https://dme.mozarteum.at/en/music/edition/" target="_blank">Digital Interactive Mozart Edition</a>.</p>
+          <br />
+          <h2>References</h2>
+          <p><sup>1</sup>Lawson, Colin: Mozart Clarinet Concerto. Cambridge: Cambridge Univ. Press, 1996, p. IX.</p>
+          <p><sup>2</sup>Mozart, Wolfgang Amadeus: <em>Neue Ausgabe sämtlicher Werke, Serie V, Konzerte: Werkgruppe 14, Konzerte für ein oder mehrere Streich-, Blas- und Zupfinstrumente und Orchester</em> , vol. 4: Klarinettenkonzert, ed. Franz Giegling, Kassel, Tours, London: Bärenreiter, 1977.</p>
+
+        </div>
+        <div class="col-sm-2 "> </div>
+      </div>
+    </div>
+    <footer id="footer" class="container-fluid text-center">
+      <div class="col-sm-2 description"> </div>
+      <div class="containter description">
+        <div class="col-sm-4">
+          <p>Developed by Oleksii Sapov-Erlinger.<br />Contact: <a href="mailto:sapov@gmx.at">sapov@gmx.at</a>
+          </p>
+        </div>
+        <div class="col-sm-4">
+          <a href="https://github.com/o-sapov/MCC" target="_blank">
+            <img class="GitHub" title="source code" alt="GiHub" src="../pict/GitHub-Mark-Light-64px.png" />
+          </a>
+        </div>
+      </div>
+      <div class="music">
+        <div class="btn-group navbar-left" style="background-color:#f6f6f6; padding-top:1rem; ">
+          <span class="page-nav-elem glyphicon glyphicon-step-backward gi-2x" id="btn_first_page">
+            <label content="first page"></label>
+          </span>
+          <span class="page-nav-elem glyphicon glyphicon glyphicon-circle-arrow-left gi-2x" id="btn_prev_page"></span>
+          <span class="page-nav-elem glyphicon glyphicon-circle-arrow-right gi-2x" id="btn_next_page"></span>
+          <span class="page-nav-elem glyphicon glyphicon-step-forward gi-2x" id="btn_last_page"></span>
+          <span class="page-nav-elem glyphicon glyphicon-zoom-in gi-2x" id="btn_page_zoomin" style="margin-left: 0.5em;"></span>
+          <span class="page-nav-elem glyphicon glyphicon-zoom-out gi-2x" id="btn_page_zoomout"></span>
+        </div>
+        <div class="btn-group navbar-right " style="text-align:left; background-color:#f6f6f6; color:black; padding:0.5rem;">
+          <form>
+            <span style="padding:0.5rem;">Search measure:</span>
+            <input id="measureNumber" type="text" />
+            <button id="GO_measure" type="submit">Go to</button>
+          </form>
+        </div>
+        <!--<div class="btn-group navbar-left music" id="div_sections" style="text-align:left; background-color:#f6f6f6; color:black; padding:0.5rem; display:none;">
+        <p>
+          <span style="padding:0.5rem;">Select page with a specified section:</span>
+          <br />
+        </p>
+        <select id="sections">
+          <option value="m1_d1e425">Tutti (m. 1)</option>
+          <option value="m57_d1e62649">SOLO (m. 57)</option>
+          <option value="m154_d1e121582">TUTTI (m. 154)</option>
+          <option value="m172_d1e144297">SOLO (m. 172)</option>
+          <option value="m227_d1e174544">TUTTI (m. 227)</option>
+          <option value="m248_d1e202984">SOLO (m. 248)</option>
+          <option value="m343_d1e265194">TUTTI (m. 343)</option>
+        </select>
+        <button id="GO" onclick="findSection()">GO-TO</button>
+      </div>-->
+
+      </div>
+      <div class="col-sm-2 description"> </div>
+    </footer>
+    <!-- <script type="text/javascript" src=".\assets\scripts\Vendor.js">/**/</script> -->
+    <div class="modal"><!-- Place at bottom of page --></div>
+    <script src="./javascript/verovio-toolkit.js" type="text/javascript">
+      /**/</script>
+    <script src="./javascript/basic-events.js" type="text/javascript">
+      /**/</script>
+    <script type="text/javascript" src="./javascript/bootstrap.min.js">
+      /**/</script>
+    <script type="text/javascript" src="./javascript/jquery-3.3.1.min.js">
+      /**/</script>
+    <script src="./assets/scripts/rendering.js" type="text/javascript">
+      /**/</script>
+    <script src="./assets/scripts/App.js" type="text/javascript">
+      /**/</script>
+    <script src="./javascript/Saxonce/Saxonce.nocache.js" type="text/javascript">
+      /**/</script>
+  </body>
 </html>

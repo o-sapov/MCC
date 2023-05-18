@@ -1,19 +1,32 @@
+const path = require('path');
+
 module.exports = {
-    entry: './app/assets/scripts/modules.js',
+    mode: 'development',
+    entry: {
+        App: "./app/assets/scripts/App.js",
+        Vendor: "./app/assets/scripts/Vendor.js"
+    },
     output: {
-        path: __dirname + '/docs/assets/scripts',
-        filename: 'bundle.js'
+        path: path.resolve(__dirname, './docs/assets/scripts'),
+        filename: '[name].js',
     },
     module: {
         rules: [{
+            /*apply babel for js-files only*/
             test: /\.m?js$/,
-            exclude: /node_modules/,
+            include: [
+                path.resolve(__dirname, "app")
+            ],
+            exclude: [
+                path.resolve(__dirname, "node_modules")
+            ],
             use: {
                 loader: 'babel-loader',
                 options: {
                     presets: ['@babel/preset-env']
                 }
             }
-        }]
-    }
-}
+
+        }],
+    },
+};
