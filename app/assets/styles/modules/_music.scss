@@ -2,3 +2,29 @@
     display: none;
     // style="background-color: #1a0d00;"
 }
+
+.score-wrapper {
+    // display is set to "flex" when switching to allegro
+    display: none;
+    // flex-direction: row;
+    overflow: auto;
+    height: 80%;
+}
+
+
+#svg_output {
+    // display: block;
+	/*padding-top: 10rem;*/
+	// padding-bottom: 50px;
+	/*padding: 1rem;*/
+	background-color: #f6f6f6;
+	/*margin: 1em;*/
+	/* height: 200rem;*/
+	border: brown;
+
+}
+
+.control-bar {
+    // position: absolute;
+    bottom: 0;
+}

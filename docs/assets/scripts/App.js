@@ -25,7 +25,7 @@ eval("// require('./modules/rendering');\n__webpack_require__(/*! ./modules/Proj
   \**********************************************************/
 /***/ (() => {
 
-eval("// show project descrption\n$('#project_info').on(\"click\", function (e) {\n  $('.music').hide();\n  $(\"body\").css(\"background-color\", \"#fff\");\n  $('.description').show();\n  $('#allegro').removeClass('active');\n  $(this).addClass('active');\n  $(footer).css(\"position\", \"\");\n});\n$('#allegro').on(\"click\", function (e) {\n  loadFile();\n  $('.description').hide();\n  $(\"body\").css(\"background-color\", \"#1a0d00;\");\n  $('.music').show();\n  $('#project_info').removeClass('active');\n  $(this).addClass('active');\n  $(footer).css(\"position\", \"fixed\");\n});\n\n//# sourceURL=webpack://mozart_clarinet_concerto/./app/assets/scripts/modules/ProjectInformation.js?");
+eval("// show project descrption\n$('#project_info').on(\"click\", function (e) {\n  $('.music').hide();\n  $(\"body\").css(\"background-color\", \"#fff\");\n  $('.description').show();\n  $('#allegro').removeClass('active');\n  $(this).addClass('active');\n  $(footer).css(\"position\", \"\");\n});\n$('#allegro').on(\"click\", function (e) {\n  loadFile();\n  $('.description').hide();\n  $(\"body\").css(\"background-color\", \"#1a0d00;\");\n  $('.music').show();\n  $('.score-wrapper').css(\"display\", \"block\");\n  $('#project_info').removeClass('active');\n  $(this).addClass('active');\n  $(footer).css(\"display\", \"none\");\n});\n\n//# sourceURL=webpack://mozart_clarinet_concerto/./app/assets/scripts/modules/ProjectInformation.js?");
 
 /***/ })
 

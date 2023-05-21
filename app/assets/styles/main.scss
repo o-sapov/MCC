@@ -3,6 +3,7 @@
 @import 'modules/description';
 @import 'modules/music';
 @import 'modules/footer';
+@import 'modules/control-bar';
 
 
 /* From bootstrap web page templates */
@@ -92,17 +93,6 @@ a:active {
 }
 
 
-
-
-#svg_output {
-	/*padding-top: 10rem;*/
-	padding-bottom: 50px;
-	/*padding: 1rem;*/
-	background-color: #f6f6f6;
-	/*margin: 1em;*/
-	/* height: 200rem;*/
-	border: brown;
-}
 
 
 #choice_overlay {
@@ -197,19 +187,3 @@ body.loading .modal {
 	display: block;
 }
 
-.btn-group {
-	margin-left: 1em;
-	margin-top: 1em;
-	margin: 1rem;
-}
-
-.page-nav-elem {
-	min-height: 2em;
-	min-width: 2em;
-	color: #91aa59;
-	cursor: pointer;
-}
-
-.gi-2x {
-	font-size: 1.5em;
-}
