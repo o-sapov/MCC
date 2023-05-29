@@ -1,8 +1,12 @@
 var gulp = require('gulp'),
     watch = require('gulp-watch'),
-    browserSync = require('browser-sync').create();
+    browserSync = require('browser-sync').create(),
+    reload = browserSync.reload;;
 
-const scss = './app/assets/styles';
+const htmlSource = './docs/**/*.html';
+const scssSource = './app/assets/styles/**/*.scss';
+const scssDist = './docs/assets/styles';
+const jsSource = './app/assets/scripts/**/*.js';
 
 
 gulp.task('watch', function () {
@@ -14,28 +18,17 @@ gulp.task('watch', function () {
         }
     });
 
-    // watch('./docs/index.html', function () {
-    //     browserSync.reload();
-    // });
-
-    watch('./docs/**/*.html', function () {
-        browserSync.reload();
-    });
-
-    watch(scss, gulp.series('manageCSS'));
-    watch('./app/assets/scripts/**/*.js', gulp.series('scriptsRefresh'));
+    watch(htmlSource).on("change", reload);  
+    watch(scssSource, gulp.series('manageCSS'));
+    watch(jsSource, gulp.series('scriptsRefresh'));
 });
 
 gulp.task('cssInject', function () {
-    const stylesDest = './docs/assets/styles';
-    return gulp.src(stylesDest).pipe(browserSync.stream());
+    return gulp.src(scssDist).pipe(browserSync.stream());
 });
 
-gulp.task('reloadBrowser', function() {
-    browserSync.reload();
-  });
   
 gulp.task('manageCSS', gulp.series('sass', 'cssmin', 'cssInject'));
-gulp.task('scriptsRefresh', gulp.series('scripts',  'reloadBrowser'));
+gulp.task('scriptsRefresh', gulp.series('scripts',  reload));
 
 
