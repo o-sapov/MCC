@@ -1,11 +1,15 @@
 /* Set black background color, white text and some padding */
 footer {
-    background-color: #555;
-    color: white;
+    background-color: $background-header-footer;
+    color: $font-header-footer;
     padding: 15px;
     bottom: 0;
     // position: fixed;
     width: 100%;
+
+    p {
+        margin-top: 0;
+    }
 }
 
 #footer a:link {

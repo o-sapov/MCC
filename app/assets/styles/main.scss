@@ -1,45 +1,14 @@
 // @import '../../../node_modules/bootstrap/scss/bootstrap';
 @import 'base/global';
+@import 'base/variables';
 @import 'modules/description';
 @import 'modules/music';
 @import 'modules/footer';
 @import 'modules/control-bar';
-
-
-/* From bootstrap web page templates */
-/* Remove the navbar's default margin-bottom and rounded borders */
-.navbar {
-	margin-bottom: 0;
-	border-radius: 0;
-}
-
-/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {
-	height: 450px
-}
-
-/* Set gray background color and 100% height */
-.sidenav {
-	padding-top: 20px;
-	background-color: #f1f1f1;
-	height: 100%;
-}
+@import 'modules/nav';
 
 
 
-
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width : 767px) {
-	.sidenav {
-		height: auto;
-		padding: 15px;
-	}
-	.row.content {
-		height: auto;
-	}
-}
-
-/* end bootstrap */
 
 
 button,
@@ -57,9 +26,7 @@ header,
 	font-family: verdana;
 	color: #660000;
 }
-.navbar {
-	margin-bottom: 0;
-}
+
 .container .panel-body {
 	/*margin-left: 32rem;*/
 	padding-top: 5rem;
@@ -79,9 +46,9 @@ a:link {
 }
 
 /* visited link */
-a:visited {
-	color: #0d1a00;
-}
+// a:visited {
+// 	color: #0d1a00;
+// }
 
 a:hover {
 	color: #9999ff;

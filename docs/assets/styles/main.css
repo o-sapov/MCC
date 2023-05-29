@@ -42,11 +42,14 @@ h1.main_title {
 
 /* Set black background color, white text and some padding */
 footer {
-  background-color: #555;
+  background-color: #222222;
   color: white;
   padding: 15px;
   bottom: 0;
   width: 100%;
+}
+footer p {
+  margin-top: 0;
 }
 
 #footer a:link {
@@ -67,11 +70,14 @@ footer {
 }
 
 .control-bar__pages-nav {
-  display: flex;
   align-items: center;
   min-height: 26px;
   border: 1px solid;
   border-radius: 7px;
+}
+
+.control-bar_search-text {
+  padding: 0.5em;
 }
 
 .btn-group {
@@ -94,36 +100,10 @@ hr {
   margin-bottom: 2px;
 }
 
-/* From bootstrap web page templates */
-/* Remove the navbar's default margin-bottom and rounded borders */
-.navbar {
-  margin-bottom: 0;
-  border-radius: 0;
+#allegro {
+  padding-left: 3em;
 }
 
-/* Set height of the grid so .sidenav can be 100% (adjust as needed) */
-.row.content {
-  height: 450px;
-}
-
-/* Set gray background color and 100% height */
-.sidenav {
-  padding-top: 20px;
-  background-color: #f1f1f1;
-  height: 100%;
-}
-
-/* On small screens, set height to 'auto' for sidenav and grid */
-@media screen and (max-width: 767px) {
-  .sidenav {
-    height: auto;
-    padding: 15px;
-  }
-  .row.content {
-    height: auto;
-  }
-}
-/* end bootstrap */
 button,
 select, input {
   color: black;
@@ -137,10 +117,6 @@ header,
   /*width: 15rem;*/
   font-family: verdana;
   color: #660000;
-}
-
-.navbar {
-  margin-bottom: 0;
 }
 
 .container .panel-body {
@@ -161,10 +137,6 @@ a:link {
 }
 
 /* visited link */
-a:visited {
-  color: #0d1a00;
-}
-
 a:hover {
   color: #9999ff;
 }
