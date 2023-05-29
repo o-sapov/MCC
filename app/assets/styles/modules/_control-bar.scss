@@ -1,5 +1,5 @@
 .control-bar {
-    // display: flex;
+    // display: flex; activates by JS
     align-items: center;
     justify-content: flex-start;
     font-size: 10pt;
@@ -14,7 +14,6 @@
 
 
 .control-bar__pages-nav {
-    display: flex;
     align-items: center;
     min-height: 26px;
     border: 1px solid;
@@ -23,6 +22,9 @@
     // margin-left: 2em;      
 }
 
+.control-bar_search-text {
+    padding: 0.5em;
+}
 
 .btn-group {
     margin-left: 1em;
@@ -42,8 +44,10 @@
 .gi-2x {
     font-size: 1.5em;
 }
+
 hr {
     margin-top: 2px;
     margin-bottom: 2px;
 }
+
 // style="background-color:#f6f6f6; padding-top:1rem; "

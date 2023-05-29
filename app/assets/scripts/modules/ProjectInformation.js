@@ -15,8 +15,8 @@ $('#allegro').on("click", function (e) {
     $("body").css("background-color", "#1a0d00;");
     $('.music').show();
     $('.score-wrapper').css("display", "block")
+    $('.control-bar').css("display", "flex")
     $('#project_info').removeClass('active');
     $(this).addClass('active');
     $(footer).css("display", "none")
-
 });
