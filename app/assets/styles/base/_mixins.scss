@@ -1,0 +1,67 @@
+/* MIXINS */
+@mixin wrapperMusic {
+    margin-left: auto;
+    margin-right: auto; 
+    width: 95vw;
+}
+
+
+@mixin media($point) {
+
+    $atSmall: "(min-width: 530px)";
+    $atMedium: "(min-width: 800px)";
+    $atLarge: "(min-width: 1010px)";
+    $atLargest: "(min-width: 1600px)";
+  
+    @if $point == atSmall {
+      @media #{$atSmall} { @content; }
+    }
+    @else if $point == atMedium {
+      @media #{$atMedium} { @content; }
+    }
+    @else if $point == atLarge {
+      @media #{$atLarge}  { @content; }
+    }
+    @else if $point == atLargest {
+      @media #{$atLargest}  { @content; }
+    }
+  
+  }
+
+
+// @mixin atSmall {
+//     @media (min-width: 530px) {
+//       @mixin-content;
+//     }
+//   }
+  
+//   @mixin atMedium {
+    
+//         font-size: 50px;
+    
+//     // @media (min-width: 800px) {
+//     // //   @mixin-content;
+//     // }
+//   }
+  
+//   @mixin atLarge {
+//     @media (min-width: 1010px) {
+//     //   @mixin-content;
+//     }
+//   }
+  
+//   @mixin atLargest {
+//     @media (min-width: 1600px) {
+//     //   @mixin-content;
+//     }
+//   }
+  
+//   @mixin clearfix {
+//     &::after {
+//       content: "";
+//       clear: both;
+//       display: table;
+//     }
+//   }
+  
+  /* END MIXINS */

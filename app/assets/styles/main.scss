@@ -1,10 +1,12 @@
 // @import '../../../node_modules/bootstrap/scss/bootstrap';
-@import 'base/global';
 @import 'base/variables';
+@import 'base/mixins';
+@import 'base/global';
 @import 'modules/description';
 @import 'modules/music';
 @import 'modules/footer';
 @import 'modules/control-bar';
+@import 'modules/wrapper';
 @import 'modules/nav';
 
 

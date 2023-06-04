@@ -1,15 +1,13 @@
 .control-bar {
-    // display: flex; activates by JS
-    align-items: center;
-    justify-content: flex-start;
-    font-size: 10pt;
-    height: 38px;
-    padding: 2px;
-    margin: 0px;
-    // border: 1px solid;
-    // z-index: 6;
-    // color: var(--textColor);
-    // background-color: var(--controlMenuBackgroundColor);
+    // display: flex; activated by JS
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    align-items: center;    
+    background-color: #1c1c2e;
+    color: darkgrey;
+    padding-left: 30px;
+    // @include wrapperMusic;
 }
 
 
@@ -20,6 +18,11 @@
     border-radius: 7px;
     // margin: 5em 0px 3px 0px;
     // margin-left: 2em;      
+}
+
+.control-bar__score-nav {
+    @extend .control-bar__pages-nav;
+    padding: 1rem;
 }
 
 .control-bar_search-text {
@@ -48,6 +51,19 @@
 hr {
     margin-top: 2px;
     margin-bottom: 2px;
+}
+
+
+.fillSpace {
+    flex: auto;
+}
+
+.fillSpaceRight {
+    width: 5rem;
+}
+
+#measureNumber {
+    width: 3em;
 }
 
 // style="background-color:#f6f6f6; padding-top:1rem; "

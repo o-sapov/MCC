@@ -1,0 +1,28 @@
+.wrapper {
+    width: 60vw;
+    margin-left: auto;
+    margin-right: auto;
+    // padding: 0.7rem;
+
+
+    
+    // @include media(atMedium) {
+    //     width: 750px;
+    //   }
+
+      // @include media(atLarge) {
+      //   width: 60vw;
+      // }
+
+      // @include media(atLargest) {
+      //   width: 50vw;
+      // }
+    // max-width: 1280px;
+    background-color: $backgroundWrapper;
+ 
+  
+    &::before {
+      display: table;
+      content: " ";
+    }
+  }

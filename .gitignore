@@ -2,6 +2,7 @@
 .vscode
 node_modules/ 
 *-report.html
+materials
 
 */**/.~lock.*
 */**/.fuse_*

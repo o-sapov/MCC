@@ -1,2 +1,2 @@
 // require('./modules/rendering');
-require('./modules/ProjectInformation');
+require('./modules/toggleViews');

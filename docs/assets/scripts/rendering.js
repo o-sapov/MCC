@@ -36,7 +36,7 @@ function loadData(data) {
 	vrvToolkit.loadData(data);
 	var elementPage = vrvToolkit.getPageWithElement(id);
 	if (elementPage == 0) {
-		alert("This measure is: 1) out of range; 2) not avaiable in the 'part(s)' mode. (TIP: For better behavior reload the page with F5.)");
+		alert("The measure could not be located. It might be\n1) out of range;\n2) not avaiable in the 'Clarinet part' mode.");
 	} else {
 		page = elementPage;
 	}

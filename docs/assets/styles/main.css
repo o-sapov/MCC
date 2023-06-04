@@ -1,10 +1,13 @@
 @charset "UTF-8";
-html, body {
+/* MIXINS */
+/* END MIXINS */
+html,
+body {
   height: 100%;
 }
 
 body {
-  background-color: #fff;
+  background-color: #374259;
   font-size: 16px;
 }
 
@@ -13,8 +16,13 @@ p {
   margin-top: 2rem;
 }
 
-h1.main_title {
-  margin-top: 1.8em;
+.main_title {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+ul.concerto-verions {
+  list-style-type: upper-roman;
 }
 
 .music {
@@ -24,7 +32,8 @@ h1.main_title {
 .score-wrapper {
   display: none;
   overflow: auto;
-  height: 80%;
+  height: 80vh;
+  margin-bottom: auto;
 }
 
 #svg_output {
@@ -34,10 +43,6 @@ h1.main_title {
   /*margin: 1em;*/
   /* height: 200rem;*/
   border: brown;
-}
-
-.control-bar {
-  bottom: 0;
 }
 
 /* Set black background color, white text and some padding */
@@ -61,19 +66,24 @@ footer p {
 }
 
 .control-bar {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   align-items: center;
-  justify-content: flex-start;
-  font-size: 10pt;
-  height: 38px;
-  padding: 2px;
-  margin: 0px;
+  background-color: #1c1c2e;
+  color: darkgrey;
+  padding-left: 30px;
 }
 
-.control-bar__pages-nav {
+.control-bar__pages-nav, .control-bar__score-nav {
   align-items: center;
   min-height: 26px;
   border: 1px solid;
   border-radius: 7px;
+}
+
+.control-bar__score-nav {
+  padding: 1rem;
 }
 
 .control-bar_search-text {
@@ -98,6 +108,35 @@ footer p {
 hr {
   margin-top: 2px;
   margin-bottom: 2px;
+}
+
+.fillSpace {
+  flex: auto;
+}
+
+.fillSpaceRight {
+  width: 5rem;
+}
+
+#measureNumber {
+  width: 3em;
+}
+
+.wrapper {
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #ededed;
+}
+.wrapper::before {
+  display: table;
+  content: " ";
+}
+
+.navbar {
+  background-color: #1c1c2e;
+  margin-bottom: 0;
+  padding: 1rem;
 }
 
 #allegro {
