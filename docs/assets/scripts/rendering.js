@@ -4,7 +4,7 @@ var zoom = 40;
 var pageHeight = 2970;
 var pageWidth = 2100;
 /* the default xslt to load */
-let $xslToDisplay = "../xslt/parts.xsl";
+let $xslToDisplay = "./xslt/parts.xsl";
 
 //////////////////////////////////////////////
 /* Variables for selecting a <choice> child */
@@ -135,7 +135,7 @@ function loadFile() {
 	$("body").addClass("loading");
 	
 	setTimeout(function () {
-		const file = "../mei/mozart_clarinetConcerto.xml";
+		const file = "./mei/mozart_clarinetConcerto.xml";
 		var xsl = Saxon.requestXML($xslToDisplay);
 		var xml = Saxon.requestXML(file);
 		var proc = Saxon.newXSLT20Processor(xsl);
@@ -242,13 +242,13 @@ function initOnClickForPageNavBtns() {
 
 function switchToParts() {
 	$("#div_sections").hide();
-	$xslToDisplay = "../xslt/parts.xsl";
+	$xslToDisplay = "./xslt/parts.xsl";
 	id = "m48_d1e53631";
 	loadFile();
 }
 
 function switchToScore() {
-	$xslToDisplay = "../xslt/score.xsl";
+	$xslToDisplay = "./xslt/score.xsl";
 	$("#div_sections").show();
 	id = "m1_d1e425";
 	loadFile();
