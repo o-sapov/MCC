@@ -40,7 +40,7 @@
   },
   "homepage": "https://github.com/o-sapov/MCC#readme",
   "dependencies": {
-    "bootstrap": "^3.3.7",
+    "bootstrap": "^3.4.1",
     "jquery": "^3.7.0"
   }
 }
