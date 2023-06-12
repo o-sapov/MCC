@@ -13,7 +13,10 @@ body {
 
 p {
   text-align: justify;
-  margin-top: 2rem;
+}
+
+h2 {
+  margin-bottom: 2rem;
 }
 
 .main_title {
