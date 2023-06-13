@@ -10,6 +10,11 @@ body {
   background-color: #374259;
   font-size: 16px;
 }
+@media (min-width: 2000px) {
+  body {
+    font-size: 18px;
+  }
+}
 
 p {
   text-align: justify;
@@ -17,6 +22,10 @@ p {
 
 h2 {
   margin-bottom: 2rem;
+}
+
+.description {
+  padding-bottom: 15%;
 }
 
 .main_title {
@@ -63,6 +72,7 @@ footer {
   color: white;
   padding: 15px;
   bottom: 0;
+  position: absolute;
   width: 100%;
 }
 footer p {
@@ -135,14 +145,34 @@ hr {
 }
 
 .wrapper {
-  width: 60vw;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  width: 100vw;
   background-color: #ededed;
+}
+@media (min-width: 1010px) {
+  .wrapper {
+    width: 80vw;
+  }
+}
+@media (min-width: 1600px) {
+  .wrapper {
+    width: 70vw;
+  }
+}
+@media (min-width: 2000px) {
+  .wrapper {
+    width: 50vw;
+  }
 }
 .wrapper::before {
   display: table;
   content: " ";
+}
+
+.wrapper--description {
+  min-height: 95vh;
 }
 
 .navbar {

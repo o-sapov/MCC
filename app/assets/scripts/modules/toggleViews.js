@@ -3,7 +3,7 @@
 $('#project_info').on("click", function (e) {
     $('.music').hide();
     $("body").css("background-color", "#fff");
-    $('.description').show();
+    $('.home, .wrapper--description').show();
     $('#allegro').removeClass('active');
     $(this).addClass('active');
     $(footer).css("position", "")
@@ -13,7 +13,7 @@ $('#project_info').on("click", function (e) {
 
 $('#allegro').on("click", function (e) {
     loadFile();
-    $('.description').hide();
+    $('.home, .wrapper--description').hide();
     $("body").css("background-color", "#1a0d00;");
     $('.music').show();
     $('.score-wrapper').css("display", "block")
