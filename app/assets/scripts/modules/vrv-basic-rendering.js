@@ -1,5 +1,3 @@
-
-
 document.addEventListener("DOMContentLoaded", (event) => {
     verovio.module.onRuntimeInitialized = () => {
         const tk = new verovio.toolkit();
@@ -32,7 +30,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 
 
-        fetch("./data/dmeref_457-003_5490.xml")
+        fetch("./data/mozart_K622_allegro.mei")
             // fetch("https://www.verovio.org/examples/downloads/Schubert_Lindenbaum.mei")
             .then((response) => response.text())
             .then((meiXML) => {
