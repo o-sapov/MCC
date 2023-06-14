@@ -15,7 +15,7 @@
   \***********************************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// require('./modules/rendering');\n__webpack_require__(/*! ./modules/toggleViews */ \"./app/assets/scripts/modules/toggleViews.js\");\n\n//# sourceURL=webpack://mozart_clarinet_concerto/./app/assets/scripts/App.js?");
+eval("__webpack_require__(/*! ./modules/vrv-basic-rendering.js */ \"./app/assets/scripts/modules/vrv-basic-rendering.js\");\n__webpack_require__(/*! ./modules/toggleViews */ \"./app/assets/scripts/modules/toggleViews.js\");\n\n//# sourceURL=webpack://mozart_clarinet_concerto/./app/assets/scripts/App.js?");
 
 /***/ }),
 
@@ -26,6 +26,16 @@ eval("// require('./modules/rendering');\n__webpack_require__(/*! ./modules/togg
 /***/ (() => {
 
 eval("$('#project_info').on(\"click\", function (e) {\n  $('.music').hide();\n  $(\"body\").css(\"background-color\", \"#fff\");\n  $('.home, .wrapper--description').show();\n  $('#allegro').removeClass('active');\n  $(this).addClass('active');\n  $(footer).css(\"position\", \"\");\n  $(\".wrapper\").css(\"width\", \"60vw\");\n  $(\"body\").css(\"background-color\", \"#374259\");\n});\n$('#allegro').on(\"click\", function (e) {\n  loadFile();\n  $('.home, .wrapper--description').hide();\n  $(\"body\").css(\"background-color\", \"#1a0d00;\");\n  $('.music').show();\n  $('.score-wrapper').css(\"display\", \"block\");\n  $('.control-bar').css(\"display\", \"flex\");\n  $('#project_info').removeClass('active');\n  $(this).addClass('active');\n  $(footer).css(\"display\", \"none\");\n  $(\".wrapper\").css(\"width\", \"100vw\");\n  $(\"body\").css(\"background-color\", \"#f6f6f6\");\n});\n\n//# sourceURL=webpack://mozart_clarinet_concerto/./app/assets/scripts/modules/toggleViews.js?");
+
+/***/ }),
+
+/***/ "./app/assets/scripts/modules/vrv-basic-rendering.js":
+/*!***********************************************************!*\
+  !*** ./app/assets/scripts/modules/vrv-basic-rendering.js ***!
+  \***********************************************************/
+/***/ (() => {
+
+eval("\n\n//# sourceURL=webpack://mozart_clarinet_concerto/./app/assets/scripts/modules/vrv-basic-rendering.js?");
 
 /***/ })
 
