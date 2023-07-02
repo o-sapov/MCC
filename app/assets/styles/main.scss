@@ -2,6 +2,7 @@
 @import 'base/variables';
 @import 'base/mixins';
 @import 'base/global';
+@import 'base/fonts';
 @import 'modules/description';
 @import 'modules/music';
 @import 'modules/footer';
@@ -9,6 +10,7 @@
 @import 'modules/wrapper';
 @import 'modules/nav';
 @import 'modules/bootstrap';
+@import 'modules/modals';
 
 
 
@@ -102,58 +104,3 @@ a:active {
 	font-size: 1em;
 	padding: 5px;
 }
-
-
-.loader {
-	border: 16px solid #f3f3f3; /* Light grey */
-	border-top: 16px solid #3498db; /* Blue */
-	border-radius: 50%;
-	width: 120px;
-	height: 120px;
-	animation: spin 2s linear infinite;
-	-webkit-animation: spin 2s linear infinite;
-	alignment: center;
-}
-
-@keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-  }
-
-@-webkit-keyframes spin {
-  0% { -webkit-transform: rotate(0deg); }
-  100% { -webkit-transform: rotate(360deg); }
-}
-
-/* Start by setting display:none to make this hidden.
-     Then we position it in relation to the viewport window
-     with position:fixed. Width, height, top and left speak
-     for themselves. Background we set to 80% white with
-     our animation centered, and no-repeating */
-.modal {
-	display: none;
-	position: fixed;
-	z-index: 1000;
-	top: 0;
-	left: 0;
-	height: 100%;
-	width: 100%;
-	background: rgba(255, 255, 255, .8)
- /*url('http://i.stack.imgur.com/FhHRx.gif')*/
- url('../images/giphy.gif')
- 50% 50%
- no-repeat;
-}
-
-/* When the body has the loading class, we turn
-     the scrollbar off with overflow:hidden */
-body.loading .modal {
-	overflow: hidden;
-}
-
-/* Anytime the body has the loading class, our
-     modal element will be visible */
-body.loading .modal {
-	display: block;
-}
-

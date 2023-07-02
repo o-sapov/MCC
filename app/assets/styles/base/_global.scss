@@ -1,12 +1,21 @@
 html,
 body {
     height: 100%;
-   
+    // margin: 0;
+    // position: relative;
+    // padding-bottom: 100px;
+    // /* height of the footer */
+    // box-sizing: border-box;
+
 }
 
 body {
     background-color: $backgroundBodyDescription;
     font-size: 16px;
+
+    @include media(atLargestPlus) {
+        font-size: 18px;
+    }
 }
 
 p {
