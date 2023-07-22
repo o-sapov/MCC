@@ -12,7 +12,7 @@
     $atMedium: "(min-width: 800px)";
     $atLarge: "(min-width: 1010px)";
     $atLargest: "(min-width: 1600px)";
-    $atLargestPlus: "(min-width: 2000px)";
+    $atLargestPlus: "(min-width: 1900px)";
   
     @if $point == atSmall {
       @media #{$atSmall} { @content; }

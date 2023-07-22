@@ -16,24 +16,20 @@
   }
 
   @include media(atLargestPlus) {
-    width: 50vw;
+    width: 55vw;
   }
 
   // max-width: 1280px;
-  background-color: $backgroundWrapper;
+  // background-color: $backgroundWrapper;
 
 
-  &::before {
-    display: table;
-    content: " ";
+  // &::before {
+  //   display: table;
+  //   content: " ";
+  // }
+
+  &--description {
+    min-height: 90vh;
   }
-}
 
-.wrapper--description {
-  min-height: 95vh;
-}
-
-.wrapper__modal--info {
-  @extend .wrapper;
-  background-color: rgba(255, 255, 255, 0.94);
 }

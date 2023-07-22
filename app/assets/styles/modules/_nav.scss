@@ -1,5 +1,5 @@
 .navbar {
-    background-color:  $backgroundDark;
+    background-color: $backgroundDark;
     // color: $font-header-footer;
     margin-bottom: 0;
     padding: 1rem;
@@ -8,4 +8,21 @@
 #allegro {
     padding-left: 3em;
     // font-size: large;
+}
+
+.manual {
+    visibility: hidden;
+
+    &--is-visible {
+        visibility: visible;
+    }
+
+
+    button {
+        padding: 4px 9px;
+    }
+
+    span.glyphicon {
+        font-size: 25px;
+    }
 }

@@ -2,13 +2,13 @@
 
 $('#project_info').on("click", function (e) {
     $('.music').hide();
-    $("body").css("background-color", "#fff");
     $('.home, .wrapper--description').show();
     $('#allegro').removeClass('active');
     $(this).addClass('active');
     $(footer).css("position", "")
     $(".wrapper").css("width", "60vw")
-    $("body").css("background-color", "#374259")
+    // $("body").css("background-color", "#374259")
+    $(".manual").removeClass("manual--is-visible")
 });
 
 $('#allegro').on("click", function (e) {
@@ -23,4 +23,5 @@ $('#allegro').on("click", function (e) {
     $(footer).css("display", "none")
     $(".wrapper").css("width", "100vw")
     $("body").css("background-color", "#f6f6f6")
+    $(".manual").addClass("manual--is-visible")
 });

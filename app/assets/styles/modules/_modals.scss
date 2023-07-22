@@ -10,12 +10,12 @@
 }
 
 
-body.loading .modal--loading {
+body.loading .modal-loading {
     display: block;
 }
 
 // Display gif animation while rendering MEI
-.modal--loading {
+.modal-loading {
     @extend .modal;
     background: rgba(255, 255, 255, .8)
         /*url('http://i.stack.imgur.com/FhHRx.gif')*/
@@ -23,18 +23,24 @@ body.loading .modal--loading {
 }
 
 
-.modal--info {
+.modal-manual {
     @extend .modal;
     overflow: scroll;
-    background-color: rgba(255, 255, 255, 0.94);
+    background-color: rgba(237, 237, 237, 0.99);
     display: block;
     font-size: 18px;
 
     /* hide */
-    // opacity: 0;
-    // visibility: hidden;
-    // transform: scale(1.2);
-    // transition: all .3s ease-out;
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.2);
+    transition: all .3s ease-out;
+
+    &--is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
 
     &__inner {
         font-family: 'Roboto Slab', serif;
@@ -44,7 +50,8 @@ body.loading .modal--loading {
         bottom: 5%;
 
         img {
-            height: 150px;
+            height: 100px;
+            margin-top: 5px;
         }
     }
 
@@ -85,4 +92,8 @@ body.loading .modal--loading {
 #user_manual {
     padding: 5rem 0 2rem 0;
     font-weight: 500;
+}
+
+.manual  .glyphicon {
+    top: 3px;
 }
