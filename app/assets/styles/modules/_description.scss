@@ -1,6 +1,15 @@
+.description {
+	padding-bottom: 15%;
+}
+
 .main_title {
 	margin-top: 2em;
 	margin-bottom: 2em;
+
+	@include media(atLargestPlus) {
+		margin-top: 3em;
+		margin-bottom: 4em;
+	}
 }
 
 ul.concerto-verions {
@@ -9,6 +18,10 @@ ul.concerto-verions {
 
 .intro-text {
 	padding-right: 2em;
+
+	@include media(atLargestPlus) {
+		padding-right: 4em;
+	}
 }
 
 .references {

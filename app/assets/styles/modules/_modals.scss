@@ -1,0 +1,99 @@
+﻿// Generic rules for all modals.
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    height: 100 vh;
+    width: 100%;
+}
+
+
+body.loading .modal-loading {
+    display: block;
+}
+
+// Display gif animation while rendering MEI
+.modal-loading {
+    @extend .modal;
+    background: rgba(255, 255, 255, .8)
+        /*url('http://i.stack.imgur.com/FhHRx.gif')*/
+        url('../images/giphy.gif') 50% 50% no-repeat;
+}
+
+
+.modal-manual {
+    @extend .modal;
+    overflow: scroll;
+    background-color: rgba(237, 237, 237, 0.99);
+    display: block;
+    font-size: 18px;
+
+    /* hide */
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.2);
+    transition: all .3s ease-out;
+
+    &--is-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1);
+    }
+
+    &__inner {
+        font-family: 'Roboto Slab', serif;
+        position: absolute;
+        width: 100%;
+        top: 5%;
+        bottom: 5%;
+
+        img {
+            height: 100px;
+            margin-top: 5px;
+        }
+    }
+
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 2.5rem;
+        transform: scaleX(1.2);
+        transform-origin: 100% 0;
+        color: $background-header-footer;
+        cursor: pointer;
+
+        &:hover {
+            color: orange;
+        }
+
+    }
+
+    &__rows>.row {
+        padding: 2rem;
+    }
+
+    &__rows {
+        border: 1px solid;
+    }
+
+    p {
+        text-align: center;
+    }
+
+}
+
+.row--pct {
+    padding: 1.5rem 0 1rem 0;
+}
+
+#user_manual {
+    padding: 5rem 0 2rem 0;
+    font-weight: 500;
+}
+
+.manual  .glyphicon {
+    top: 3px;
+}
