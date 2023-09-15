@@ -1,5 +1,16 @@
 .description {
 	padding-bottom: 15%;
+
+	img {
+		border-radius: 10%;
+		height: 430px;
+		transform: translateY(5px);
+
+		@include media(atLargestPlus) {
+			// transform: translateY(25px);
+			height: 500px;
+		}
+	}
 }
 
 .main_title {

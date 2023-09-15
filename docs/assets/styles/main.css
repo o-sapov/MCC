@@ -64,6 +64,16 @@ a:active {
 .description {
   padding-bottom: 15%;
 }
+.description img {
+  border-radius: 10%;
+  height: 430px;
+  transform: translateY(5px);
+}
+@media (min-width: 1900px) {
+  .description img {
+    height: 500px;
+  }
+}
 
 .main_title {
   margin-top: 2em;
